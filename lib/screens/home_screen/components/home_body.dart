@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 import '../../../size_config.dart';
-import 'categories_section.dart';
-import 'custom_banner.dart';
 import 'home_header.dart';
+import 'sections/categories_section.dart';
+import 'sections/custom_banner.dart';
 
 class HomeBody extends StatelessWidget {
   const HomeBody({Key? key}) : super(key: key);
