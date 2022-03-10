@@ -8,6 +8,8 @@ import '../../../constants.dart';
 import '../../../size_config.dart';
 
 class ForgotPassForm extends StatefulWidget {
+  const ForgotPassForm({Key? key}) : super(key: key);
+
   @override
   _ForgotPassFormState createState() => _ForgotPassFormState();
 }
@@ -36,7 +38,7 @@ class _ForgotPassFormState extends State<ForgotPassForm> {
                   errors.remove(kInvalidEmailError);
                 });
               }
-              return null;
+              return;
             },
             validator: (value) {
               if (value!.isEmpty && !errors.contains(kEmailNullError)) {

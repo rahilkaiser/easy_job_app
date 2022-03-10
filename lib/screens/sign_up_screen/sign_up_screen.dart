@@ -1,3 +1,4 @@
+import 'package:easy_job_app/screens/sign_up_screen/components/sign_up_body.dart';
 import 'package:flutter/material.dart';
 
 class SignUpScreen extends StatelessWidget {
@@ -9,7 +10,7 @@ class SignUpScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Sign Up"),
       ),
-      body: Container(),
+      body: const SignUpBody(),
     );
   }
 }
