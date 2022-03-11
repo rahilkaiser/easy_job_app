@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../size_config.dart';
-import 'search_field.dart';
+import 'sections/search_field.dart';
 
 class HomeHeader extends StatelessWidget {
   const HomeHeader({
@@ -17,6 +17,8 @@ class HomeHeader extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: const [
           SearchField(),
+          //Standort
+          //Notifications
         ],
       ),
     );

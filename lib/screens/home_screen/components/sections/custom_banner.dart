@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../../../../size_config.dart';
 
+// TODO: Kann entfernt werden
+
 class CustomBanner extends StatelessWidget {
   const CustomBanner({
     Key? key,
@@ -27,7 +29,7 @@ class CustomBanner extends StatelessWidget {
           children: [
             const TextSpan(text: "A Summer Surpise\n"),
             TextSpan(
-              text: "Cashback 20%",
+              text: "Hier könnte Werbung stehen",
               style: TextStyle(
                 fontSize: getProportionateScreenWidth(24),
                 fontWeight: FontWeight.bold,

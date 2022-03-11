@@ -1,9 +1,11 @@
+import 'package:easy_job_app/screens/search_screen/filter_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../constants.dart';
 import '../enums.dart';
 import '../screens/home_screen/home_screen.dart';
+import '../screens/profile_screen/profile_screen.dart';
 
 class CustomBottomNavBar extends StatelessWidget {
   const CustomBottomNavBar({
@@ -24,7 +26,7 @@ class CustomBottomNavBar extends StatelessWidget {
           BoxShadow(
             offset: const Offset(0, -15),
             blurRadius: 20,
-            color: Color(0xFFDADADA).withOpacity(0.15),
+            color: const Color(0xFFDADADA).withOpacity(0.15),
           ),
         ],
         borderRadius: const BorderRadius.only(
@@ -37,6 +39,7 @@ class CustomBottomNavBar extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
+              //HOME
               IconButton(
                 icon: SvgPicture.asset(
                   "assets/icons/Shop Icon.svg",
@@ -44,27 +47,58 @@ class CustomBottomNavBar extends StatelessWidget {
                       ? kPrimaryColor
                       : inActiveIconColor,
                 ),
-                onPressed: () =>
-                    Navigator.pushNamed(context, HomeScreen.routeName),
+                onPressed: () => {
+                  if (selectedMenu != MenuState.HOME)
+                    {
+                      Navigator.pushReplacementNamed(
+                          context, HomeScreen.routeName),
+                    }
+                },
               ),
+
+              //SEARCH
               IconButton(
-                icon: SvgPicture.asset("assets/icons/Heart Icon.svg"),
-                onPressed: () {},
+                icon: SvgPicture.asset(
+                  "assets/icons/Search Icon.svg",
+                  color: MenuState.SEARCH == selectedMenu
+                      ? kPrimaryColor
+                      : inActiveIconColor,
+                ),
+                onPressed: () {
+                  if (selectedMenu != MenuState.SEARCH) {
+                    Navigator.pushReplacementNamed(
+                        context, FilterScreen.routeName);
+                  }
+                },
               ),
+
+              //CHAT
               IconButton(
-                icon: SvgPicture.asset("assets/icons/Chat bubble Icon.svg"),
-                onPressed: () {},
+                icon: SvgPicture.asset(
+                  "assets/icons/Chat bubble Icon.svg",
+                  color: MenuState.MESSAGE == selectedMenu
+                      ? kPrimaryColor
+                      : inActiveIconColor,
+                ),
+                onPressed: () => {},
               ),
+
+              //PROFIL
               IconButton(
-                  icon: SvgPicture.asset(
-                    "assets/icons/User Icon.svg",
-                    color: MenuState.PROFILE == selectedMenu
-                        ? kPrimaryColor
-                        : inActiveIconColor,
-                  ),
-                  onPressed: () => {}
-                  //TODO: Navigator.pushNamed(context, ProfileScreen.routeName),
-                  ),
+                icon: SvgPicture.asset(
+                  "assets/icons/User Icon.svg",
+                  color: MenuState.PROFILE == selectedMenu
+                      ? kPrimaryColor
+                      : inActiveIconColor,
+                ),
+                onPressed: () => {
+                  if (selectedMenu != MenuState.PROFILE)
+                    {
+                      Navigator.pushReplacementNamed(
+                          context, ProfileScreen.routeName),
+                    }
+                },
+              ),
             ],
           )),
     );

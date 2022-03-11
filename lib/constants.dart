@@ -12,6 +12,8 @@ const kPrimaryGradientColor = LinearGradient(
 const kSecondaryColor = Color(0xFF979797);
 const kTextColor = Color(0xFF757575);
 
+const double defaultPadding = 16.0;
+
 const kAnimationDuration = Duration(milliseconds: 200);
 
 final headingStyle = TextStyle(
@@ -49,3 +51,10 @@ OutlineInputBorder outlineInputBorder() {
     borderSide: const BorderSide(color: kTextColor),
   );
 }
+
+const TextStyle hintSearchTextStyle = TextStyle(
+  color: Colors.grey,
+  fontSize: null,
+  fontWeight: FontWeight.w400,
+  fontStyle: FontStyle.normal,
+);

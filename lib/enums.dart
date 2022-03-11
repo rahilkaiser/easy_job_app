@@ -1,3 +1,3 @@
 // ignore_for_file: constant_identifier_names
 
-enum MenuState { HOME, FAVORITE, MESSAGE, PROFILE }
+enum MenuState { HOME, SEARCH, MESSAGE, PROFILE }

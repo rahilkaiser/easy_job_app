@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:easy_job_app/constants.dart';
+import 'package:easy_job_app/screens/home_screen/home_screen.dart';
 
 import 'package:flutter/material.dart';
 
@@ -23,7 +24,7 @@ class _SplashScreenBodyState extends State<SplashScreenBody> {
   route() {
     Navigator.pushReplacement(
       context,
-      MaterialPageRoute(builder: (context) => const SignInScreen()),
+      MaterialPageRoute(builder: (context) => HomeScreen()),
     );
   }
 
