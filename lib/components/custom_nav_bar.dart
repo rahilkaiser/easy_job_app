@@ -1,3 +1,4 @@
+import 'package:easy_job_app/screens/chat_list_screen/chat_list_screen.dart';
 import 'package:easy_job_app/screens/search_screen/filter_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -80,7 +81,13 @@ class CustomBottomNavBar extends StatelessWidget {
                       ? kPrimaryColor
                       : inActiveIconColor,
                 ),
-                onPressed: () => {},
+                onPressed: () => {
+                  if (selectedMenu != MenuState.MESSAGE)
+                    {
+                      Navigator.pushReplacementNamed(
+                          context, ChatListScreen.routeName),
+                    }
+                },
               ),
 
               //PROFIL
