@@ -1,3 +1,4 @@
+import 'package:easy_job_app/screens/map/map_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -16,7 +17,9 @@ class QuickSelectionSection extends StatelessWidget {
         children: [
           QuickSelectCard(
               icon: "assets/icons/Location point.svg",
-              press: () {},
+              press: () {
+                Navigator.pushNamed(context, MapScreen.routeName);
+              },
               text: "Suche Jobs in der Nähe"
               // "Search for Jobs close by",
               ),

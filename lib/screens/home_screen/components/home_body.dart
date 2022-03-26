@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import '../../../size_config.dart';
 import 'home_header.dart';
 import 'sections/categories_section.dart';
-import 'sections/custom_banner.dart';
 import 'sections/quick_selection_section.dart';
+import 'sections/recommandations_section.dart';
 import 'sections/special_jobs_section.dart';
 
 class HomeBody extends StatelessWidget {
@@ -28,9 +28,8 @@ class HomeBody extends StatelessWidget {
             //Section search for all kind of Jobs close with FIlter
             const SpecialJobsSection(),
             SizedBox(height: getProportionateScreenWidth(30)),
-            // const RecommandationsSection(),
+            const RecommandationsSection(),
             SizedBox(height: getProportionateScreenWidth(30)),
-            // RecommendationsSection(),
             // SizedBox(height: getProportionateScreenWidth(30)),
           ],
         ),

@@ -1,8 +1,11 @@
+import 'package:easy_job_app/screens/filter/filter_screen.dart';
+import 'package:easy_job_app/screens/search_screen/filter_result_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../../../../constants.dart';
 import '../../../../size_config.dart';
+import '../../../search_screen/components/filter_search_field.dart';
 
 class SearchField extends StatelessWidget {
   const SearchField({
@@ -23,6 +26,11 @@ class SearchField extends StatelessWidget {
         borderRadius: BorderRadius.circular(10),
       ),
       child: TextField(
+        onTap: () {
+          Navigator.pushNamed(context, FilterSearchField.routeName,
+              arguments: false);
+        },
+        enabled: true,
         // ignore: avoid_print
         onChanged: (value) => print(value),
         decoration: InputDecoration(
@@ -34,7 +42,7 @@ class SearchField extends StatelessWidget {
           enabledBorder: outlineInputBorder,
           focusedBorder: outlineInputBorder,
           errorBorder: outlineInputBorder,
-          hintText: "Search jobs",
+          hintText: "Welchen Job suchen Sie?",
           hintStyle: hintSearchTextStyle,
           prefixIcon: const Padding(
             padding: EdgeInsets.all(14),
@@ -54,7 +62,8 @@ class SearchField extends StatelessWidget {
                   ),
                 ),
                 onPressed: () {
-                  // TODO: FILTER SEARCH
+                  Navigator.pushNamed(context, FilterScreen.routeName,
+                      arguments: false);
                 },
                 child: SvgPicture.asset("assets/icons/filter.svg"),
               ),
