@@ -1,4 +1,5 @@
 import 'package:easy_job_app/screens/chat/chat_room_screen/chat_room_screen.dart';
+import 'package:easy_job_app/screens/create_job/create_job_screen.dart';
 import 'package:easy_job_app/screens/home_screen/home_screen.dart';
 import 'package:easy_job_app/screens/map/map_screen.dart';
 import 'package:easy_job_app/screens/search_screen/components/filter_search_field.dart';
@@ -34,4 +35,5 @@ final Map<String, WidgetBuilder> routes = {
   MessagesScreen.routeName: (context) => MessagesScreen(),
   FilterScreen.routeName: (context) => FilterScreen(),
   MapScreen.routeName: (context) => MapScreen(),
+  CreateJobScreen.routeName: (context) => CreateJobScreen(),
 };

@@ -1,3 +1,4 @@
+import 'package:easy_job_app/screens/create_job/create_job_screen.dart';
 import 'package:easy_job_app/screens/map/map_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -25,7 +26,9 @@ class QuickSelectionSection extends StatelessWidget {
               ),
           QuickSelectCard(
               icon: "assets/icons/Plus Icon.svg",
-              press: () {},
+              press: () {
+                Navigator.pushNamed(context, CreateJobScreen.routeName);
+              },
               text: "Erstelle einen Auftrag"
               // "Create a job Offer",
               ),

@@ -96,19 +96,16 @@ class _MapScreenState extends State<MapScreen> {
     Position pos = await Geolocator.getCurrentPosition(
       desiredAccuracy: LocationAccuracy.high,
     );
-    this._relocateCurrentPosition(
-        LatLng(pos.latitude, pos.longitude)
-    );
+    this._relocateCurrentPosition(LatLng(pos.latitude, pos.longitude));
   }
 
   Future<void> _relocateCurrentPosition(LatLng newPos) async {
     currentPosLatLng = LatLng(newPos.latitude, newPos.longitude);
-    currentCameraPos = CameraPosition(target: currentPosLatLng, zoom: _zoomLevel);
+    currentCameraPos =
+        CameraPosition(target: currentPosLatLng, zoom: _zoomLevel);
 
     List<Placemark> placeMarks = await placemarkFromCoordinates(
-        currentPosLatLng.latitude,
-        currentPosLatLng.longitude
-    );
+        currentPosLatLng.latitude, currentPosLatLng.longitude);
 
     setState(() {
       this._setMarkers(pos: currentPosLatLng);
@@ -116,8 +113,7 @@ class _MapScreenState extends State<MapScreen> {
       this._adjustZoomLevel();
       _textEditingController.text =
           '${placeMarks[0].thoroughfare} ${placeMarks[0].subThoroughfare}, ${placeMarks[0].locality}, ${placeMarks[0].country}';
-      }
-    );
+    });
 
     _mapController.animateCamera(
       CameraUpdate.newCameraPosition(currentCameraPos),
@@ -137,6 +133,9 @@ class _MapScreenState extends State<MapScreen> {
         title: Text("Map"),
         actions: [
           TextButton(
+            style: TextButton.styleFrom(
+              primary: kPrimaryColor,
+            ),
             onPressed: () => Navigator.pop(context),
             child: Row(
               children: const [
@@ -144,12 +143,7 @@ class _MapScreenState extends State<MapScreen> {
                   Icons.check,
                   color: kPrimaryColor,
                 ),
-                Text(
-                  "Fertig",
-                  style: TextStyle(
-                    color: kPrimaryColor,
-                  ),
-                ),
+                Text("Fertig"),
               ],
             ),
           ),
@@ -212,7 +206,7 @@ class _MapScreenState extends State<MapScreen> {
                         filled: true,
                         fillColor: Colors.white,
                         focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: kPrimaryColor),
+                          borderSide: BorderSide(color: kPrimaryColor),
                         ),
                       ),
                     ),
@@ -250,8 +244,7 @@ class _MapScreenState extends State<MapScreen> {
                                 setState(() {
                                   this._setCircles(
                                       centerPos: currentPosLatLng,
-                                      radius: value
-                                  );
+                                      radius: value);
                                   this._adjustZoomLevel();
                                   _mapController.animateCamera(
                                     CameraUpdate.newCameraPosition(
