@@ -36,7 +36,15 @@ class _ChatListScreenState extends State<ChatListScreen> {
           title: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text('Nachrichten'),
+              // SizedBox(
+              //   width: 60,
+              // ),
+              Expanded(
+                child: Text(
+                  'Nachrichten',
+                  // textAlign: TextAlign.center,
+                ),
+              ),
               IconButton(
                 onPressed: () {},
                 icon: Icon(Icons.search),

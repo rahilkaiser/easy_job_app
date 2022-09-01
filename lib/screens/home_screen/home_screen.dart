@@ -1,10 +1,5 @@
-// ignore_for_file: prefer_const_constructors_in_immutables
-
 import 'package:easy_job_app/components/app_Bar.dart';
-import 'package:easy_job_app/components/app_title.dart';
-import 'package:easy_job_app/constants.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 import '../../components/custom_nav_bar.dart';
 import '../../enums.dart';

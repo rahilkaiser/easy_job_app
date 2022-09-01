@@ -1,14 +1,12 @@
-import 'package:easy_job_app/screens/filter/filter_screen.dart';
-import 'package:easy_job_app/screens/search_screen/filter_result_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
-import '../../../../constants.dart';
-import '../../../../size_config.dart';
-import '../../../search_screen/components/filter_search_field.dart';
+import '../../../../../constants.dart';
+import '../../../../../size_config.dart';
+import '../../../../search_screen/components/filter_search_field.dart';
+import 'ElevatedFilterButton.dart';
 
-class SearchField extends StatelessWidget {
-  const SearchField({
+class HomeSearchField extends StatelessWidget {
+  const HomeSearchField({
     Key? key,
   }) : super(key: key);
 
@@ -48,27 +46,7 @@ class SearchField extends StatelessWidget {
             padding: EdgeInsets.all(14),
             child: Icon(Icons.search),
           ),
-          suffixIcon: Padding(
-            padding: const EdgeInsets.symmetric(
-                horizontal: defaultPadding / 4, vertical: defaultPadding / 4),
-            child: SizedBox(
-              width: 48,
-              height: 48,
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  primary: kPrimaryColor,
-                  shape: const RoundedRectangleBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(12)),
-                  ),
-                ),
-                onPressed: () {
-                  Navigator.pushNamed(context, FilterScreen.routeName,
-                      arguments: false);
-                },
-                child: SvgPicture.asset("assets/icons/filter.svg"),
-              ),
-            ),
-          ),
+          suffixIcon: ElevatedFilterButton(),
         ),
       ),
     );

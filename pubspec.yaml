@@ -43,6 +43,7 @@ dependencies:
   geocoding: ^2.0.4
   http: ^0.13.4
   dropdown_search: ^2.0.1
+  simple_time_range_picker: ^0.0.4
 
 dev_dependencies:
   flutter_test:

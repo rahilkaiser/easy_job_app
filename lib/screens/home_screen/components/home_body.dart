@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../size_config.dart';
 import 'home_header.dart';
-import 'sections/categories_section.dart';
+import 'sections/categories-section/HomeCategoriesSection.dart';
 import 'sections/quick_selection_section.dart';
 import 'sections/recommandations_section.dart';
 import 'sections/special_jobs_section.dart';
@@ -20,7 +20,7 @@ class HomeBody extends StatelessWidget {
             const HomeHeader(),
             SizedBox(height: getProportionateScreenWidth(10)),
             // const CustomBanner(),
-            const CategoriesSection(),
+            const HomeCategoriesSection(),
             SizedBox(height: getProportionateScreenWidth(10)),
             const QuickSelectionSection(),
             //Best Paid and best rated jobs
